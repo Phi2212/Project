@@ -1,5 +1,5 @@
 <?php   
-
+    ob_start();
     include('../config/constants.php');
     include('login-control.php');
 
@@ -8,6 +8,7 @@
 
 <html>
     <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <title>Food Order Web</title>
        <link rel="stylesheet" href="../css/admin.css">
        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
@@ -24,11 +25,6 @@
                 <i class='bx bx-menu' id="btn" ></i>
             </div>
             <ul class="nav_list">
-                <li>
-                <i class='bx bx-search' ></i>
-                    <input type="text" placeholder="Search">
-                    <span class="tooltip">Search</span>
-                </li>
                 <li>
                     <a href="index.php">
                     <i class='bx bx-grid-alt' ></i>
@@ -83,8 +79,7 @@
                 <div class="profile">
                     <div class="profile-detail">
                         <div class="name-job">
-                            <div class="name">Phi</div>
-                            <div class="job">Admin</div>
+                            <div class="name"><?php echo $_SESSION['user']; ?></div>
                         </div>
                     </div>
                     <a href="logout.php">

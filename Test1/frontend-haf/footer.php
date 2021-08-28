@@ -1,4 +1,9 @@
-
+    <!-- pretty Loading Section Starts Here -->    
+    <div class="loader-container">
+    <img src="images/loader.gif" alt="">
+    </div>
+    
+    <!-- pretty Loading Section Ends Here --> 
     <!-- social Section Starts Here -->
     <section class="social">
         <div class="container text-center">
@@ -25,5 +30,7 @@
     </section>
     <!-- footer Section Ends Here -->
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

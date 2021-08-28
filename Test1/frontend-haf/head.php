@@ -5,56 +5,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Important to make website responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Website</title>
 
-    <!-- Link our CSS file -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Link CSS file -->
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
     <!-- Navbar Section Starts Here -->
-    <section class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="#" title="Logo">
-                    <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive">
-                </a>
-            </div>
+<header>
 
-            
+<a href="<?php echo SITEURL; ?>index.php" class="logo"><i class="fas fa-utensils"></i>FFood</a>
 
-            <div class="menu text-center">
-                <ul>
-                    <li>
-                        <a href="<?php echo SITEURL; ?>">Home</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo SITEURL; ?>categories.php">Categories</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo SITEURL; ?>foods.php">Foods</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                    <li> </li>
-                    <li></li>
-                    <li></li>
-                    <li class="text-right">
-                        <a href="<?php echo SITEURL; ?>login-guest.php">Login</a>
-                    </li>
-                    <li class="text-right">
-                        <a href="logout.php">Logout</a>
-                    </li>
-                </ul>
+<nav class="navbar">
+    <a class="active" href="<?php echo SITEURL; ?>">Home</a>
+    <a href="#category">Categories</a>
+    <a href="#about">About</a>
+    <a href="#food-menu">Food Menu</a>
+    <a href="#review">Review</a>
+</nav>
 
-            </div>
+<div class="icons">
+    <i class="fas fa-bars" id="menu-bars"></i>
+    <i class="fas fa-search" id="search-icon"></i>
+    <a href="#" class="fas fa-heart"></a>
+    <a href="<?php echo SITEURL; ?>cart.php" class="fas fa-shopping-cart"></a>
+</div>
 
-            
+</header>
 
-            <div class="clearfix"></div>
-        </div>
-    </section>
+<form action="<?php echo SITEURL; ?>food-search.php" method="POST" id="search-form">
+    <input type="search" placeholder="search here..." name="search" id="search-box">
+    <label  for="search-box" class="fas fa-search"></label>
+    <i class="fas fa-times" id="close"></i>
+</form>
+
     <!-- Navbar Section Ends Here -->

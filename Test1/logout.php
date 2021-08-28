@@ -4,6 +4,6 @@ include('../config/constants.php');
 
 session_destroy();
 
-header('location:'.SITEURL.'index.php');
+header('location:index.php');
 
 ?>

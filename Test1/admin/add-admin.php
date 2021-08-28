@@ -1,5 +1,4 @@
 <?php include('otherpart/menu.php'); ?>
-
 <div class="main-content">
     <div class="frame">
         <h1> Add Admin </h1>
@@ -35,6 +34,7 @@
 <?php include('otherpart/footer.php'); ?>
 
 <?php
+
 if(isset($_POST['submit']))
 {
     //Test submit//
@@ -58,7 +58,7 @@ if(isset($_POST['submit']))
         //Test data insert
         //echo "Date insert";
         $_SESSION['add'] = "<div class='success'>Admin Added Successfully!</div>";
-        header("location:".SITEURL.'admin/manage-admin.php');
+        header('location:'.SITEURL.'admin/manage-admin.php');
     }
     
     else
@@ -68,4 +68,5 @@ if(isset($_POST['submit']))
         header("location:".SITEURL.'admin/add-admin.php');
     }
 }
+
 ?>

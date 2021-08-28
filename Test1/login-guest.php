@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="css/admin.css">
     </head>
     <body class="bg-login">
-        <form action="" method="POST" class="box">
+        <form action="" method="POST" class="box1">
             <h1>Login</h1>
             <?php 
             if(isset($_SESSION['signup']))

@@ -76,6 +76,7 @@
 
         if($res==TRUE)
         {
+            
             $_SESSION['update'] = "<div class='success'>Update Successfully!</div>";
             header('location:'.SITEURL.'admin/manage-admin.php');
         }

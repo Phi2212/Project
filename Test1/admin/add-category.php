@@ -100,7 +100,6 @@
                     if($image_title !="")
                     {
                         
-                    
 
                         $ext = end(explode('.', $image_title));
 
@@ -142,7 +141,7 @@
                 }
                 else
                 {
-                    $_SESSION['add'] = "<div class='success'> Add Failed! Try again!</div>";
+                    $_SESSION['add'] = "<div class='error'> Add Failed! Try again!</div>";
                     header('location:'.SITEURL.'admin/add-category.php');
                 }
             }

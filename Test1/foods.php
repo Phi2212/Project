@@ -1,17 +1,6 @@
 <?php include('frontend-haf/head.php') ?>
 
-    <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search text-center">
-        <div class="container">
-            
-            <form action="<?php echo SITEURL; ?>food-search.php" method="POST">
-                <input type="search" name="search" placeholder="Search for Food.." required>
-                <input type="submit" name="submit" value="Search" class="btn btn-primary">
-            </form>
 
-        </div>
-    </section>
-    <!-- fOOD sEARCH Section Ends Here -->
 
 
 
@@ -33,7 +22,7 @@
                     while($row=mysqli_fetch_assoc($res))
                     {
                         $id = $row['id'];
-                        $title = $row['title'];
+                        $title = $row['title']; 
                         $description = $row['description'];
                         $price = $row['price'];
                         $image_title = $row['image_title'];
@@ -83,6 +72,6 @@
         </div>
 
     </section>
-    <!-- fOOD Menu Section Ends Here -->
+    <!-- fOOD Menu Section EndsHere -->
 
 <?php include('frontend-haf/footer.php') ?>
