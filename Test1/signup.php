@@ -45,14 +45,21 @@ if(isset($_POST['submit']))
  $name = $_POST['name'];
  $username = $_POST['username'];
  $password = md5($_POST['password']);
+ if ($username == "" || $password == "" || $name == "") {
 
- 
- $sql = "INSERT INTO fod_guest SET
+    $_SESSION['signup'] = "<div class= error>Please fill your information</div>";
+    header("location:".SITEURL.'signup.php'); 
+}
+else{
+    $sql = "INSERT INTO fod_guest SET
     name='$name',
     username='$username',
     password='$password'
- ";
- //echo $sql;
+ "; 
+  //echo $sql;
+}
+ 
+
     
     $res = mysqli_query($conn, $sql) or die(mysqli_error());   
 

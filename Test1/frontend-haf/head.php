@@ -23,10 +23,9 @@
 
 <nav class="navbar">
     <a class="active" href="<?php echo SITEURL; ?>">Home</a>
-    <a href="#category">Categories</a>
-    <a href="#about">About</a>
-    <a href="#food-menu">Food Menu</a>
-    <a href="#review">Review</a>
+    <a href="<?php echo SITEURL; ?>categories.php">Categories</a>
+    <a href="<?php echo SITEURL; ?>foods.php">Food Menu</a>
+    <a href="<?php echo SITEURL; ?>contact.php">Contact us</a>
 </nav>
 
 <div class="icons">

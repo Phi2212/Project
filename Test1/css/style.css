@@ -1,8 +1,11 @@
 :root{
-    --pink:#ff6b81;
+    --pink-light:#ff6b81;
     --black:#192a56;
     --light-color:#666;
     --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --purple:#814096;
+    --pink:#F83292;
+    --gradient:linear-gradient(90deg, var(--purple), var(--pink));
 }
 
 *{
@@ -83,6 +86,7 @@ header .icons #menu-bars{
 
 section{
     padding:2rem 9%;
+    padding-top: 7.5rem;
 }
 
 #search-form{
@@ -137,23 +141,54 @@ section{
     font-size: 5rem;
 }
 
+/* Home CSS */
+.home{
+    background-image: url('../images/bg-img.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.home .content h3{
+    font-size: 5.5rem;
+    color: white;
+    text-transform: uppercase;
+}
+
+.home .content h3 span{
+    color:var(--pink);
+    text-transform: uppercase;
+}
+
+.home .content p{
+    font-size: 1.7rem;
+    color:white;
+    padding:1rem 0;
+}
 
 /* Button CSS*/
 
 .btn{
-    margin-top: 1rem;
     display: inline-block;
+    margin-top: 1rem;
+    padding:.8rem 3rem;
+    border-radius: 5rem;
+    background:var(--gradient);
     font-size: 1.7rem;
     color:#fff;
-    background: var(--black);
-    border-radius: .5rem;
     cursor: pointer;
-    padding:.8rem 3rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    transition: all .3s linear;
 }
 
 .btn:hover{
-    background: var(--pink);
-    letter-spacing: .1rem;
+    transform: scale(1.1);
 }
 
 .btn-primary{
@@ -198,16 +233,6 @@ section{
     clear: both;
     float: none;
 }
-
-a{
-    color: #ff6b81;
-    text-decoration: none;
-}
-a:hover{
-    color: #ff4757;
-}
-
-
 
 h2{
     color: #2f3542;
@@ -292,7 +317,7 @@ fieldset{
 }
 .food-menu-box{
     width: 43%;
-    margin: 1%;
+    margin: 2%;
     padding: 2%;
     float: left;
     background-color: white;
@@ -311,11 +336,11 @@ fieldset{
 }
 
 .food-price{
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     margin: 2% 0;
 }
 .food-detail{
-    font-size: 1rem;
+    font-size: 1.6rem;
     color: #747d8c;
 }
 /* CSS for About*/

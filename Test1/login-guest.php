@@ -38,23 +38,41 @@
     {
         $username = $_POST['username'];
         $password = md5($_POST['password']);
+        if ($username == "" || $password == "") {
 
-        $sql = "SELECT * FROM fod_guest WHERE username='$username' AND password= '$password'";
-
-        $res = mysqli_query($conn, $sql);
-        $count = mysqli_num_rows($res);
-
-        if($count==1)
-        {
-            $_SESSION['login'] = "<div class='success'> Login successful! </div>";
-            $_SESSION['user'] = $username;
-            header('location:'.SITEURL.'index.php');
-        }
-        else
-        {
-            $_SESSION['login'] = "<div class='error'> Login Failed! Try again </div>";
+			$_SESSION['login'] = "<div class='error'> Please Enter Information </div>";
             header('location:'.SITEURL.'login-guest.php'); 
-        }
+
+		}else{
+			$sql = "SELECT * FROM fod_guest WHERE username='$username' AND password= '$password'";
+
+            $res = mysqli_query($conn, $sql);
+            $count = mysqli_num_rows($res);
+    
+            if($count==0)
+            {
+                $_SESSION['login'] = "<div class='error'> Login Failed! Try again </div>";
+                header('location:'.SITEURL.'login-guest.php'); 
+
+
+            }
+            else
+            {
+                while($data = mysqli_fetch_array($res)){
+                $_SESSION["user_id"] = $data["id"];
+				$_SESSION['username'] = $data["username"];
+				$_SESSION["name"] = $data["name"];
+				$_SESSION["isblock"] = $data["isblock"];
+                $_SESSION["permision"] = $data["permision"];
+                }
+                $_SESSION['login'] = "<div class='success'> Login successful! </div>";  
+                header('location:'.SITEURL.'index.php');
+            }
+		}
+
+        
+
+
     }
 
 
