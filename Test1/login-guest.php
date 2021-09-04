@@ -44,15 +44,22 @@
             header('location:'.SITEURL.'login-guest.php'); 
 
 		}else{
-			$sql = "SELECT * FROM fod_guest WHERE username='$username' AND password= '$password'";
+			$sql = "SELECT * FROM fod_guest WHERE username='$username' AND password= '$password' && isblock='No'";
 
             $res = mysqli_query($conn, $sql);
             $count = mysqli_num_rows($res);
     
             if($count==0)
-            {
-                $_SESSION['login'] = "<div class='error'> Login Failed! Try again </div>";
-                header('location:'.SITEURL.'login-guest.php'); 
+            {   
+                if($isblock='Yes'){
+                    $_SESSION['login'] = "<div class='error'> Your Account has been blocked </div>";
+                    header('location:'.SITEURL.'login-guest.php');
+                }
+                else{
+                    $_SESSION['login'] = "<div class='error'> Login Failed! Try again </div>";
+                    header('location:'.SITEURL.'login-guest.php'); 
+                }
+
 
 
             }

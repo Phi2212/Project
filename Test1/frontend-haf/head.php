@@ -22,7 +22,7 @@
 <a href="<?php echo SITEURL; ?>index.php" class="logo"><i class="fas fa-utensils"></i>FFood</a>
 
 <nav class="navbar">
-    <a class="active" href="<?php echo SITEURL; ?>">Home</a>
+    <a href="<?php echo SITEURL; ?>">Home</a>
     <a href="<?php echo SITEURL; ?>categories.php">Categories</a>
     <a href="<?php echo SITEURL; ?>foods.php">Food Menu</a>
     <a href="<?php echo SITEURL; ?>contact.php">Contact us</a>

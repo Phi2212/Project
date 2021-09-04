@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="css/admin.css">
     </head>
     <body class="bg-login">
-        <form action="" method="POST" class="box1">
+        <form action="signup.php?action=signup" method="POST" class="box1">
             <h1>Signup</h1>
             <?php
             if(isset($_SESSION['signup']))
@@ -45,39 +45,53 @@ if(isset($_POST['submit']))
  $name = $_POST['name'];
  $username = $_POST['username'];
  $password = md5($_POST['password']);
+ $isblock = 'No';
  if ($username == "" || $password == "" || $name == "") {
 
     $_SESSION['signup'] = "<div class= error>Please fill your information</div>";
     header("location:".SITEURL.'signup.php'); 
 }
 else{
+    if(isset($_GET['action']) && $_GET['action']== 'signup'){
+        $sql_check = "SELECT * FROM fod_guest WHERE username='$username'";
+        $res_check = mysqli_query($conn, $sql_check);
+        if (mysqli_num_rows($res_check) > 0 ) { 	               
+           //echo "Fail";
+           $_SESSION['signup'] = "<div class= 'error'>Username Existed!Try Again</div>";
+           header("location:".SITEURL.'signup.php'); 
+       } 
+       else{
     $sql = "INSERT INTO fod_guest SET
     name='$name',
     username='$username',
-    password='$password'
+    password='$password',
+    isblock='$isblock'
  "; 
   //echo $sql;
+  $res = mysqli_query($conn, $sql) or die(mysqli_error());   
+
+
+  if($res==TRUE)
+  {
+  //Test data insert
+  //echo "Date insert";
+  $_SESSION['signup'] = "<div class=success>Signup Successfully! Please Login to access</div>";
+  header("location:".SITEURL.'login-guest.php');
+  }
+
+  else
+  {
+      //echo "Fail";
+      $_SESSION['signup'] = "<div class= error>Signup Failed! Try again!</div>";
+      header("location:".SITEURL.'signup.php');
+  } 
+}
 }
  
 
     
-    $res = mysqli_query($conn, $sql) or die(mysqli_error());   
-
-
-        if($res==TRUE)
-        {
-        //Test data insert
-        //echo "Date insert";
-        $_SESSION['signup'] = "<div class=success>Signup Successfully! Please Login to access</div>";
-        header("location:".SITEURL.'login-guest.php');
-        }
-    
-        else
-        {
-            //echo "Fail";
-            $_SESSION['signup'] = "<div class= error>Signup Failed! Try again!</div>";
-            header("location:".SITEURL.'signup.php');
-        }  
+ 
       
+}
 }
 ?>

@@ -44,7 +44,7 @@
         $username = $_POST['username'];
         $password = md5($_POST['password']);
 
-        $sql = "SELECT * FROM fod_admin WHERE username='$username' AND password= '$password'";
+        $sql = "SELECT * FROM fod_admin WHERE username='$username' AND password= '$password' && isblock='No'";
 
         $res = mysqli_query($conn, $sql);
         $count = mysqli_num_rows($res);
@@ -56,9 +56,16 @@
             header('location:'.SITEURL.'admin/');
         }
         else
-        {
+        {   
+            if($isblock = 'Yes'){
+            $_SESSION['login'] = "<div class='error text-center'> Your account have been blocked </div>";
+            header('location:'.SITEURL.'admin/login.php'); 
+            }
+            else{
             $_SESSION['login'] = "<div class='error text-center'> Login Failed! Try again </div>";
             header('location:'.SITEURL.'admin/login.php'); 
+            }
+
         }
     }
 

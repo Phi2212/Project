@@ -59,6 +59,8 @@
                         <th>Seri.N</th>
                         <th>Full Name</th>
                         <th>Username</th>
+                        <th>Create Date</th>
+                        <th>Block</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
@@ -79,6 +81,8 @@
                                     $id=$rows['id'];
                                     $admin_name=$rows['admin_name'];
                                     $username=$rows['username'];
+                                    $createdate=$rows['createdate'];
+                                    $isblock=$rows['isblock'];
 
 
                                     ?>
@@ -86,6 +90,8 @@
                                             <td><?php echo $stt++; ?></td>
                                             <td><?php echo $admin_name; ?></td>
                                             <td><?php echo $username; ?></td>
+                                            <td><?php echo $createdate; ?></td>
+                                            <td><?php echo $isblock; ?></td>
                                             <td>
                                                 <a href="<?php echo SITEURL;  ?>admin/change-password.php?id=<?php echo $id; ?>" class="btn-primary">Change Password</a>
                                                 <a href="<?php echo SITEURL;  ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>

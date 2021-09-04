@@ -40,7 +40,7 @@
                     <span class="tooltip">Admin</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="manage-staff.php">
                     <i class='bx bx-user-circle' ></i>
                     <span class="link_name">Staff</span>
                     </a>

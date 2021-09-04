@@ -127,7 +127,7 @@
                             <div class="box-header">
                                 Recent Order
                             </div>
-                            <div class="box-body overflow-scroll">
+                            <div class="box-body">
                                 <table>
                                     <thead>
                                         <tr>
