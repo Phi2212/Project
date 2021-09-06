@@ -51,7 +51,7 @@
                             else
                             {
                                 ?>
-                                <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_title; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                                <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_title; ?>" class="img-responsive img-curve">
                                 <?php
                             }
                         ?>
