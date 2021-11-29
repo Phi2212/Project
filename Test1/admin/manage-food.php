@@ -1,4 +1,4 @@
-<?php include('otherpart/menu.php') ?>
+<?php include('otherpart/header-staff.php') ?>
 
         <!-- Main content-->
         <div class="main-content">

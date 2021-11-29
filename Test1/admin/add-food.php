@@ -74,8 +74,6 @@
                                 <?php
                             }
                             ?>
-                            <option value="1">Food</option>
-                            <option value="2">Snack</option>
                         </select>
                     </td>
                 </tr>
@@ -191,9 +189,6 @@
                 }
 
             }
-        
-        
-        
         ?>
     </div>
 </div>

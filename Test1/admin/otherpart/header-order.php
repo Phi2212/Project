@@ -26,30 +26,23 @@
                 <li>
                     <a href="index.php">
                     <i class='bx bx-grid-alt' ></i>
-                    <span class="link_name">Dashboard</span>
+                    <span class="link_name">HomePage</span>
                     </a>
-                    <span class="tooltip">Dashboard</span>
+                    <span class="tooltip">HomePage</span>
                 </li>
                 <li>
-                    <a href="manage-admin.php">
-                    <i class='bx bxs-user-circle' ></i>
-                    <span class="link_name">Admin</span>
+                    <a href="manage-order.php">
+                    <i class='bx bx-cart-alt' ></i>
+                    <span class="link_name">Order</span>
                     </a>
-                    <span class="tooltip">Admin</span>
+                    <span class="tooltip">Order</span>
                 </li>
                 <li>
-                    <a href="manage-guest.php">
-                    <i class='bx bx-user' ></i>
-                    <span class="link_name">Customer</span>
+                    <a href="send-mail2.php">
+                    <i class='bx bx-mail-send'></i>
+                    <span class="link_name">SendMail</span>
                     </a>
-                    <span class="tooltip">Customer</span>
-                </li>
-                <li>
-                    <a href="manage-contact.php">
-                    <i class='bx bxs-book-bookmark'></i>
-                    <span class="link_name">Contact</span>
-                    </a>
-                    <span class="tooltip">Contact</span>
+                    <span class="tooltip">SendMail</span>
                 </li>
             </ul>
             <div class="profile-content">

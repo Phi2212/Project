@@ -1,4 +1,4 @@
-<?php include('otherpart/menu.php') ?>
+<?php include('otherpart/header-order.php') ?>
 
 <div class="main-content">
     <div class="frame">
@@ -17,9 +17,7 @@
                     $row=mysqli_fetch_assoc($res);
 
                     
-                    $food = $row['food'];
-                    $price = $row['price'];
-                    $qty = $row['qty'];
+                    $total = $row['total'];
                     $status = $row['status']; 
                     $customer_name = $row['customer_name'];
                     $customer_contact = $row['customer_contact'];
@@ -36,23 +34,11 @@
         <form action="" method="POST">
 
             <table class="tbl-1">
-                <tr>
-                    <td>Food Name</td>
-                    <td><b><?php echo $food; ?></b></td>
-                </tr>
 
                 <tr>
                     <td>Price</td>
-                    <td><b>$<?php echo $price; ?></b></td>
+                    <td><b>$<?php echo $total; ?></b></td>
                 </tr>
-
-                <tr>
-                    <td>Quantity</td>
-                    <td>
-                        <input type="number" name="qty" value="<?php echo $qty; ?>">
-                    </td>
-                </tr>
-
                 <tr>
                     <td>Status</td>
                     <td>
@@ -107,11 +93,7 @@
         <?php
             if(isset($_POST['submit']))
             {
-                $food = $_POST['food'];
-                $price = $_POST['price'];
-                $qty = $_POST['qty'];
-                $total = $qty * $price;
-                
+                $total = $_POST['total'];  
                 $status = $_POST['status'];
                 $customer_name = $_POST['customer_name'];
                 $customer_email = $_POST['customer_email'];
@@ -119,7 +101,6 @@
                 $customer_address = $_POST['customer_address'];
 
                 $sql2 = "UPDATE fod_order SET
-                    qty = '$qty',
                     total = '$total',
                     status = '$status',
                     customer_name = '$customer_name',
@@ -139,7 +120,7 @@
                 }
                 else
                 {
-                    $_SESSION['update'] = "<div class='error'> Update Successful! </div>";
+                    $_SESSION['update'] = "<div class='error'> Update Failed! </div>";
                     header('location:'.SITEURL.'admin/manage-order.php');
                 }
             }

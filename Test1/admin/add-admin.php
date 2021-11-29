@@ -37,6 +37,16 @@
                     <td><input type="radio" name="isblock" value="No">No</td>
                     <td><input type="radio" name="isblock" value="Yes">Yes</td>
                 </tr>
+
+                <tr>
+                    <td>Permission</td>
+                    <td><select name="permission">
+                    <option value="0">Manage Account</option>
+                    <option value="1">Warehouse Manager</option>
+                    <option value="2">Manage Order</option>
+                    </select>
+                    </td>
+                </tr>
                 
                 <tr>
                     <td colspan="2">
@@ -68,6 +78,7 @@ if(isset($_POST['submit']))
  {
      $isblock = "Yes";
  }
+ $permission = $_POST['permission'];
  if ($admin_name == "" || $password == "" || $username == "") {
 
     $_SESSION['empty'] = "<div class= 'error'>Fill your information!</div>";
@@ -90,35 +101,30 @@ if(isset($_POST['submit']))
             username='$username',
             password='$password',
             createdate='$createdate',
-            isblock='$isblock'
+            isblock='$isblock',
+            permission='$permission'
          ";
         
          //echo $sql;
          $res = mysqli_query($conn, $sql) or die(mysqli_query());
         
-         if(!$res)
-         {
-                //Test data insert
-                //echo "Fail";
-                $_SESSION['add'] = "<div class= 'error'>Error!Try Again</div>";
-                header("location:".SITEURL.'admin/add-admin.php');
-
-         }
+        if(!$res)
+        {
+            //Test data insert
+            //echo "Fail";
+            $_SESSION['add'] = "<div class= 'error'>Error!Try Again</div>";
+            header("location:".SITEURL.'admin/add-admin.php');
+        }
          
-         else
-         {
-             //echo "Date insert";
-             $_SESSION['add'] = "<div class='success'>Admin Added Successfully!</div>";
-             header('location:'.SITEURL.'admin/manage-admin.php');
-         }
+        else
+        {
+            //echo "Date insert";
+            $_SESSION['add'] = "<div class='success'>Admin Added Successfully!</div>";
+            header('location:'.SITEURL.'admin/manage-admin.php');
+        }
         }
      }
 
  }
-
-   
- 
-
 }
-
 ?>

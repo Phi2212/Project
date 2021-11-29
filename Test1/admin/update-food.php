@@ -1,4 +1,4 @@
-<?php include('otherpart/menu.php'); ?>
+<?php include('otherpart/header-staff.php'); ?>
 
 <?php
 
@@ -24,9 +24,6 @@
     {
         header('location:'.SITEURL.'admin/manage-food.php');
     }
-
-
-
 ?>
 
 <div class="main-content">
@@ -68,7 +65,6 @@
                                 <img src="<?php echo SITEURL; ?>images/food/<?php echo $current_image; ?>" width="200pxs">
                                 <?php
                             }
-                        
                         ?>
                     </td>
                 </tr>
@@ -237,9 +233,7 @@
                     header('location:'.SITEURL.'admin/manage-food.php');
                 }
 
-            }
-        
-        
+            }             
         ?>
     </div>
 </div>

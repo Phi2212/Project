@@ -1,3 +1,4 @@
+// Slide JS //
 let menu = document.querySelector('#menu-bars');
 let navbar = document.querySelector('.navbar');
 
@@ -30,6 +31,9 @@ window.onscroll = () =>{
       });
 }
 
+
+// Search JS //
+
 document.querySelector('#search-icon').onclick = () =>{
     document.querySelector('#search-form').classList.toggle('active');
   }
@@ -38,8 +42,22 @@ document.querySelector('#search-icon').onclick = () =>{
     document.querySelector('#search-form').classList.remove('active');
   }
 
-  
+// Shopping Cart JS // 
+let shoppingCart = document.querySelector('.shopping-cart');
 
+document.querySelector('#cart').onclick = () =>{
+    shoppingCart.classList.toggle('active');
+    loginForm.classList.remove('active');
+}
+// Login Form JS // 
+let loginForm = document.querySelector('.login-form');
+
+document.querySelector('#login').onclick = () =>{
+    loginForm.classList.toggle('active');
+    shoppingCart.classList.remove('active');
+}
+
+  // Review JS //
   var swiper = new Swiper(".review-slider", {
     spaceBetween: 20,
     centeredSlides: true,
@@ -63,13 +81,3 @@ document.querySelector('#search-icon').onclick = () =>{
       },
     },
   });
-
-  function loader(){
-    document.querySelector('.loader-container').classList.add('fade-out');
-  }
-  
-  function fadeOut(){
-    setInterval(loader, 3000);
-  }
-  
-  window.onload = fadeOut;

@@ -15,8 +15,6 @@
     </section>
     <!-- fOOD sEARCH Section Ends Here -->
 
-
-
     <!-- fOOD MEnu Section Starts Here -->
     <section class="food-menu">
         <div class="container">
@@ -42,6 +40,7 @@
                         $price = $row['price'];
                         $image_title = $row['image_title'];
                         ?>
+                        <form method="post" action="food-search.php?action=add&id=<?php echo $id; ?>">
                         <div class="food-menu-box">
                             <div class="food-menu-img">
                                 <?php
@@ -66,11 +65,14 @@
                                 <p class="food-detail">
                                    <?php echo $description; ?>
                                 </p>
-                                <br>
-
-                                <a href="#" class="btn btn-primary">Order Now</a>
+                                <input type="number" name="quantity" class="input-responsive" value="1" min="1" max="10" require>
+                                <input type="hidden" name="hidden_image" value="<?php echo $image_title; ?>">
+                                <input type="hidden" name="hidden_title" value="<?php echo $title; ?>">
+                                <input type="hidden" name="hidden_price" value="<?php echo $price; ?>">
+                                <input type="submit" name="add_to_cart" class="btn" value="Add to Cart" />
                             </div>
                         </div>
+                        </form>
                         <?php
                     }
                 }

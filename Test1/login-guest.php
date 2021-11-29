@@ -8,13 +8,9 @@
     </head>
     <body class="bg-login">
         <form action="" method="POST" class="box1">
-            <h1>Login</h1>
+            <h1>Login Again</h1>
             <?php 
-            if(isset($_SESSION['signup']))
-            {
-                echo $_SESSION['signup'];
-                unset($_SESSION['signup']);
-            }
+
             if(isset($_SESSION['login']))
             {
                 echo $_SESSION['login'];
@@ -24,7 +20,7 @@
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
             <input type="submit" name="submit" value="Login">
-            <a href="<?php echo SITEURL; ?>signup.php">Don't have account?Sign up here</a>
+            <h1>If you have been blocked<a href="<?php echo SITEURL; ?>contact.php">Contact here</a></h1>
             
 
         </form>
@@ -59,28 +55,11 @@
                     $_SESSION['login'] = "<div class='error'> Login Failed! Try again </div>";
                     header('location:'.SITEURL.'login-guest.php'); 
                 }
-
-
-
             }
             else
             {
-                while($data = mysqli_fetch_array($res)){
-                $_SESSION["user_id"] = $data["id"];
-				$_SESSION['username'] = $data["username"];
-				$_SESSION["name"] = $data["name"];
-				$_SESSION["isblock"] = $data["isblock"];
-                $_SESSION["permision"] = $data["permision"];
-                }
-                $_SESSION['login'] = "<div class='success'> Login successful! </div>";  
-                header('location:'.SITEURL.'index.php');
+
             }
 		}
-
-        
-
-
     }
-
-
 ?>

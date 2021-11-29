@@ -24,6 +24,7 @@
                 echo $_SESSION['login-first'];
                 unset($_SESSION['login-first']);
             }
+
         
             ?>
             <input type="text" name="username" placeholder="Enter Username">
@@ -52,8 +53,12 @@
         if($count==1)
         {
             $_SESSION['login'] = "<div class='success'> Login successful! </div>";
+            while($row = mysqli_fetch_assoc($res)){
+                $_SESSION['permission'] = $row['permission'];
+            }
             $_SESSION['user'] = $username;
-            header('location:'.SITEURL.'admin/');
+            header('location:'.SITEURL.'admin/index.php');
+
         }
         else
         {   
@@ -68,6 +73,4 @@
 
         }
     }
-
-
 ?>

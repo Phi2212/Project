@@ -26,6 +26,8 @@
             }
             ?>
             <input type="text" name="name" placeholder="Your Name">
+            <input type="text" name="phone" placeholder="Your Phone Number" required>
+            <input type="text" name="email" placeholder="Your Email" required>
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
             <div>
@@ -46,6 +48,8 @@ if(isset($_POST['submit']))
  $username = $_POST['username'];
  $password = md5($_POST['password']);
  $isblock = 'No';
+ $phone = $_POST['phone'];
+ $email = $_POST['email'];
  if ($username == "" || $password == "" || $name == "") {
 
     $_SESSION['signup'] = "<div class= error>Please fill your information</div>";
@@ -65,7 +69,9 @@ else{
     name='$name',
     username='$username',
     password='$password',
-    isblock='$isblock'
+    isblock='$isblock',
+    phone='$phone',
+    email='$email'
  "; 
   //echo $sql;
   $res = mysqli_query($conn, $sql) or die(mysqli_error());   
@@ -75,8 +81,9 @@ else{
   {
   //Test data insert
   //echo "Date insert";
-  $_SESSION['signup'] = "<div class=success>Signup Successfully! Please Login to access</div>";
-  header("location:".SITEURL.'login-guest.php');
+  $_SESSION['id_cus'] = mysqli_insert_id($conn);
+  echo '<script>alert("Signup Successfully! Please Login to access")</script>'; 
+  echo '<script>window.location="index.php"</script>';
   }
 
   else
@@ -86,12 +93,7 @@ else{
       header("location:".SITEURL.'signup.php');
   } 
 }
-}
- 
-
-    
- 
-      
+}     
 }
 }
 ?>

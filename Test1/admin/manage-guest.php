@@ -21,6 +21,8 @@
                 <th>Seri.N</th>
                 <th>Full Name</th>
                 <th>Username</th>
+                <th>Phone</th>
+                <th>Email</th>
                 <th>Status</th>
                 <th>Actions</th>
             </tr>
@@ -43,12 +45,16 @@
                                     $name=$rows['name'];
                                     $username=$rows['username'];
                                     $isblock=$rows['isblock'];
+                                    $phone=$rows['phone'];
+                                    $email=$rows['email'];
 
                                     ?>
                                         <tr>
                                             <td><?php echo $stt++; ?></td>
                                             <td><?php echo $name; ?></td>
                                             <td><?php echo $username; ?></td>
+                                            <td><?php echo $phone; ?></td>
+                                            <td><?php echo $email; ?></td>
                                             <td><?php echo $isblock; ?></td>
                                             <td><a href="<?php echo SITEURL;  ?>admin/block-guest.php?id=<?php echo $id; ?>" class="btn-secondary">Ban Account</a></td>
                                          </tr>                                       
@@ -69,12 +75,4 @@
         </table>
     </div>
 </div>
-
-
-
-
-
-
-
-
 <?php include('otherpart/footer.php') ?>

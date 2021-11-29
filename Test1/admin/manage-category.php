@@ -1,4 +1,4 @@
-<?php include('otherpart/menu.php') ?>
+<?php include('otherpart/header-staff.php') ?>
 
         <!-- Main content-->
         <div class="main-content">
@@ -6,7 +6,6 @@
                 <h1>Manage Category</h1>
                 <br /><br />
                 <?php 
-        
                     if(isset($_SESSION['add']))
                     {
                         echo $_SESSION['add'];

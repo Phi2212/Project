@@ -6,10 +6,10 @@
         <br />
         <?php
         if(isset($_SESSION['update']))
-                    {
-                        echo $_SESSION['update'];
-                        unset($_SESSION['update']);
-                    }
+        {
+            echo $_SESSION['update'];
+            unset($_SESSION['update']);
+        }
         ?>
 
         <?php 
@@ -46,8 +46,19 @@
                 </tr>
                 <tr>
                     <td>Block</td>
-                    <td><input type="radio" name="isblock" value="No">No</td>
-                    <td><input type="radio" name="isblock" value="Yes">Yes</td>
+                    <td><input type="radio" name="isblock" value="No" required>No</td>
+                    <td><input type="radio" name="isblock" value="Yes" required>Yes</td>
+                </tr>
+
+                <tr>
+                    <td>Permission</td>
+                    <td><select name="permission">
+                    <option value="0">Manage Account</option>
+                    <option value="1">Warehouse Manager</option>
+                    <option value="2">Manage Message</option>
+                    <option value="3">Manage Order</option>
+                    </select>
+                    </td>
                 </tr>
                     
                 <tr>
@@ -71,10 +82,12 @@
         $id = $_POST['id'];
         $admin_name = $_POST['admin_name'];
         $isblock = $_POST['isblock'];
+        $permission = $_POST['permission'];
 
             $sql = "UPDATE fod_admin SET
             admin_name = '$admin_name',
-            isblock = '$isblock'
+            isblock = '$isblock',
+            permission = '$permission'
             WHERE id= '$id'
             ";
     

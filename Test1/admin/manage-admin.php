@@ -1,9 +1,10 @@
+
 <?php include('otherpart/menu.php') ?>
 
         <!-- Main content-->
         <div class="main-content">
             <div class="frame">
-                <h1>Manage Admin</h1>
+                <h1>Manage Account</h1>
                 <br /><br />
 
                 <?php 
@@ -42,12 +43,11 @@
                         echo $_SESSION['change-password'];
                         unset($_SESSION['change-password']);
                     }
-
                 ?>
 
                 <br /><br />
 
-                <a href="add-admin.php" class="btn-primary">Add Admin</a>
+                <a href="add-admin.php" class="btn-primary">Add Account</a>
 
                 <br /><br />
 
@@ -60,6 +60,7 @@
                         <th>Full Name</th>
                         <th>Username</th>
                         <th>Create Date</th>
+                        <th>Permission</th>
                         <th>Block</th>
                         <th>Actions</th>
                     </tr>
@@ -83,6 +84,7 @@
                                     $username=$rows['username'];
                                     $createdate=$rows['createdate'];
                                     $isblock=$rows['isblock'];
+                                    $permission=$rows['permission'];
 
 
                                     ?>
@@ -91,6 +93,22 @@
                                             <td><?php echo $admin_name; ?></td>
                                             <td><?php echo $username; ?></td>
                                             <td><?php echo $createdate; ?></td>
+                                            <td>
+                                                <?php 
+                                                    if($permission==0)
+                                                    {
+                                                        echo "Manage Account";
+                                                    }
+                                                    if($permission==1)
+                                                    {
+                                                        echo "Warehouse Manager";
+                                                    }
+                                                    if($permission==2)
+                                                    {
+                                                        echo "Manage Order";
+                                                    }
+                                                ?>
+                                            </td>
                                             <td><?php echo $isblock; ?></td>
                                             <td>
                                                 <a href="<?php echo SITEURL;  ?>admin/change-password.php?id=<?php echo $id; ?>" class="btn-primary">Change Password</a>
@@ -110,6 +128,6 @@
                         ?>
                 </table>
             </div>
-        </div>
-
+        </div>                
 <?php include('otherpart/footer.php') ?>
+        

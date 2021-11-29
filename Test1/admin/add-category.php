@@ -1,4 +1,4 @@
-<?php include('otherpart/menu.php'); ?>
+<?php include('otherpart/header-staff.php'); ?>
 
 <div class="main-content">
     <div class="frame">
@@ -28,30 +28,30 @@
                 <tr>
                     <td>Title: </td>
                     <td>
-                        <input type="text" name="title" placeholder="Enter title">
+                        <input type="text" name="title" placeholder="Enter title" required>
                     </td>
                 </tr>
 
                 <tr>
                     <td>Featured: </td>
                     <td>
-                        <input type="radio" name="featured" value="Yes"> Yes
-                        <input type="radio" name="featured" value="No"> No
+                        <input type="radio" name="featured" value="Yes" required> Yes
+                        <input type="radio" name="featured" value="No" required> No
                     </td>
                 </tr>
 
                 <tr>
                     <td>Active: </td>
                     <td>
-                        <input type="radio" name="active" value="Yes"> Yes
-                        <input type="radio" name="active" value="No"> No
+                        <input type="radio" name="active" value="Yes" required> Yes
+                        <input type="radio" name="active" value="No" required> No
                     </td>
                 </tr>
 
                 <tr>
                     <td>Select Image: </td>
                     <td>
-                        <input type="file" name="image">
+                        <input type="file" name="image" required>
                     </td>
                 </tr>
 
@@ -144,11 +144,7 @@
                     $_SESSION['add'] = "<div class='error'> Add Failed! Try again!</div>";
                     header('location:'.SITEURL.'admin/add-category.php');
                 }
-            }
-        
-        
-        
-        
+            }        
         ?>
 
     </div>

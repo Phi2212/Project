@@ -1,4 +1,4 @@
-<?php include('otherpart/menu.php'); ?>
+<?php include('otherpart/header-staff.php'); ?>
 
 <div class="main-content">
     <div class="frame">
@@ -182,11 +182,7 @@
                     $_SESSION['update'] = "<div class='error'> Update Failed!</div>";
                     header('location:'.SITEURL.'admin/manage-category.php');
                 }
-            }
-        
-        
-        
-        
+            }  
         ?>
 
     </div>

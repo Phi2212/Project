@@ -1,9 +1,8 @@
 <?php 
 
-include('../config/constants.php');
-
-session_destroy();
-
+session_start();
+unset($_SESSION['username']);
 header('location:index.php');
+
 
 ?>

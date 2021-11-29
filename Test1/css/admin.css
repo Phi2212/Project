@@ -29,7 +29,7 @@ body{
     
 }
 
-/*CSS for navigation */
+/*CSS for navigation admin */
 
 .sidebar{
     position: fixed;
@@ -296,6 +296,8 @@ background-color: #eb4d4b;
 .error{
     color: #c23616;
 }
+
+
 
 
 /* Main content CSS*/

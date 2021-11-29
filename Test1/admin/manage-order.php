@@ -1,4 +1,4 @@
-<?php include('otherpart/menu.php') ?>
+<?php include('otherpart/header-order.php') ?>
 
         <!-- Main content-->
         <div class="main-content">
@@ -19,9 +19,6 @@
 
                     <tr>
                         <th>Seri.N</th>
-                        <th>Food</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
                         <th>Total</th>
                         <th>Order-Date</th>
                         <th>Status</th>
@@ -46,9 +43,6 @@
                             while($row=mysqli_fetch_assoc($res))
                             {
                                 $id = $row['id'];
-                                $food = $row['food'];
-                                $price = $row['price'];
-                                $qty = $row['qty'];
                                 $total = $row['total'];
                                 $status = $row['status'];
                                 $order_date = $row['order_date'];
@@ -61,9 +55,6 @@
                                 
                                  <tr>
                                     <td><?php echo $stt++; ?></td>
-                                    <td><?php echo $food; ?></td>
-                                    <td><?php echo $price; ?></td>
-                                    <td><?php echo $qty; ?></td>
                                     <td><?php echo $total; ?></td>
                                     <td><?php echo $order_date; ?></td>
                                     <td>
